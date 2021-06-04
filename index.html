@@ -1,1 +1,71 @@
-<!DOCTYPE html><html lang=""><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/favicon.ico"><title>blog</title><link href="/css/app.3b72bb5a.css" rel="preload" as="style"><link href="/css/chunk-vendors.0f1ada3b.css" rel="preload" as="style"><link href="/js/app.94d88cb7.js" rel="preload" as="script"><link href="/js/chunk-vendors.69ab7e6a.js" rel="preload" as="script"><link href="/css/chunk-vendors.0f1ada3b.css" rel="stylesheet"><link href="/css/app.3b72bb5a.css" rel="stylesheet"></head><body><noscript></noscript><div id="app"></div><script src="/js/chunk-vendors.69ab7e6a.js"></script><script src="/js/app.94d88cb7.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <title>Your RGB Color</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="NK">
+  <meta name="description" content="Create your RGB Color">
+  <meta name="theme-color" content="#317EFB"/>
+
+  <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+
+  <link rel="stylesheet" href="./css/main.css">
+
+  <!-- PWA화, 여기부터 -->
+  <!-- [iOS 사파리에 대응] -->
+    <!-- 주소창 등의 웹 브라우저 UI를 표시하지 않기 -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- 상태 바의 스타일을 지정 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- 홈 화면에서 표시되는 앱 이름을 지정 -->
+    <meta name="apple-mobile-web-app-title" content="Timer">
+    <!-- 홈 화면에서 표시되는 앱 아이콘을 지정 -->
+    <link rel="apple-touch-icon" href="./icons/icon-152x152.png">
+
+  <!-- [Android와 PC, 크롬·엣지에 대응] -->
+    <!-- 웹 앱 매니페스트를 읽어 들이기 -->
+    <link rel="manifest" href="./manifest.json">
+    <!-- 서비스 워커를 등록 -->
+    <script>
+      if('serviceWorker' in navigator){
+      try {
+        navigator.serviceWorker.register('serviceWorker.js');
+        console.log("Service Worker Registered");
+      } catch (error) {
+        console.log("Service Worker Registration Failed");
+      }
+    }
+
+    </script>
+  <!-- PWA화, 여기까지 -->
+</head>
+
+<body>
+  <p id="title">Drag your RGB range</p>
+  
+  <div class="table">
+    <button id="redInput">Red</button>
+    <button id="greenInput">Green</button>
+    <button id="blueInput">Blue</button>
+  </div>
+
+  <div class="table">
+    <input class="range" type="range" id="slideRed" name="volume" min="0" max="255" step="1" oninput="document.getElementById('valRed').innerHTML=this.value;">
+    <input class="range" type="range" id="slideGreen" name="volume" min="0" max="255" step="1" oninput="document.getElementById('valGreen').innerHTML=this.value;">
+    <input class="range" type="range" id="slideBlue" name="volume" min="0" max="255" step="1" oninput="document.getElementById('valBlue').innerHTML=this.value;">
+  </div>
+
+  <div class="table">
+    <span id="valRed">255</span>
+    <span id="valGreen">255</span>
+    <span id="valBlue">255</span>
+  </div>
+  
+  <button id="output">YOUR RGB COLOR</button>
+
+</body>
+<script src="./js/script.js" charset="utf-8"></script>
+
+</html>

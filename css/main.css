@@ -1,0 +1,52 @@
+body {
+  width: 90%;
+  margin: 5%;
+  text-align: center;
+  background-color: rgb(220, 215, 215);
+}
+
+#output {
+  background-color: rgb(255, 255, 255);
+}
+
+.table {
+  display: grid;
+  grid-template-columns: repeat(3, 33.3%);
+  align-items: center;
+  justify-items: center;
+}
+
+.range {
+  width: 90%;
+}
+
+#title {
+  text-align: center;
+}
+
+#output {
+  width: 90%;
+  height: 100px;
+  margin: 20px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+#redInput,
+#greenInput,
+#blueInput {
+  background-color: red;
+  height: 25px;
+  width: 80%;
+  border: none;
+  color: whitesmoke;
+  font-weight: bolder;
+}
+
+#greenInput {
+  background-color: green;
+}
+
+#blueInput {
+  background-color: blue;
+}
